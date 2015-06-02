@@ -1,0 +1,19 @@
+{
+  "name": "imdb-api",
+  "version": "0.0.0",
+  "authors": [
+    "Ramona Bellamy <bellamy2727@yahoo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.0",
+    "jquery": "~2.1.4"
+  }
+}
