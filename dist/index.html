@@ -2,9 +2,33 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<div class="container">
+		<div class="row header">
+			<div class="col-sm-12">
+				<section class= "page" id ="home">
+					<h1 id="homeTitle">IMDB APP</h1>
+					<form id="form">
+						<input type="text" id="input">
+						<button type="submit">Search</button>
+					</form>
+					<h4>Search the IMDB Database for your favorite movies</h4>
+				</section>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<section class="page" id="search">
+					<div class="results"></div>
+					<!-- <h3>Watch List</h3> -->
+					<div class="watchlist"></div>
+				</section>
+			</div>
+		</div>
+	</div>
 
 
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>

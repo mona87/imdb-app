@@ -1,0 +1,22 @@
+body{
+
+}
+
+#search{
+	display: none;
+}
+
+form{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.results{
+	cursor: pointer;
+}
+
+.header{
+
+/*background-color: #1C140D;*/
+	/*color: white;*/
+}
