@@ -2,11 +2,13 @@ $(document).ready(function(){
 
 	var rowString = $('.movie-info').html();
 	var buildRow = _.template(rowString);
+	var back;
 
 	var App = Backbone.Router.extend({
 			routes:{
 				'': 					'home',
 				'search/:query':  		'search',
+				'watch': 				'watch'
 			},
 
 			home: function(){
@@ -14,12 +16,21 @@ $(document).ready(function(){
 				$('h1').html('IMDB API');
 				$('#home').show();
 				$('h4').show();
+				$('#watchLink').show();
+				$('#searchLink').hide();
 			},
 
 			search: function(query){
 				// $('h1').html('Results');
 					$('#form').show();
 					$('#search').show();
+					$('.results').show();
+					$('.watchlist').hide();
+					$('#watchLink').show();
+					$('#searchLink').hide();
+					$('h3').show();
+					$('h3').html('Search Results');
+
 					$.get( 'http://www.omdbapi.com/?', {s: query}, function(moviesData){
 			
 						 var movies = moviesData.Search
@@ -34,7 +45,7 @@ $(document).ready(function(){
 						$('.temp').each(function(){
 							$(this).click(function(e){
 								// console.log($('.watchlist').has('div').html())
-								$(this).parent().css('opacity', '.8');
+								$(this).parent().css('opacity', '.5');
 								var title = $(this).parent().find('.title').text()
 								var year = $(this).parent().find('.year').text()
 								$string = $('<div>'+ title +" "+ year +'</div>')
@@ -53,6 +64,17 @@ $(document).ready(function(){
 						})			
 					}
 					,'json');
+				},
+
+				watch: function(){
+
+					$('.results').hide();
+					$('.watchlist').show();
+					$('#watchLink').hide();
+					$('#searchLink').show();
+					$('h3').show();
+					$('h3').html('Watch List');
+
 				}
 
 			
@@ -68,6 +90,14 @@ $(document).ready(function(){
 			myRouter.navigate('search/'+ query, {trigger: true});
 		});
 		
+		$('#watchLink').submit(function(e){
+			e.preventDefault();
+			myRouter.navigate('watch', {trigger: true});
+		});
+		$('#searchLink').click(function(e){
+			e.preventDefault();
+			window.history.back();
+		});
 	
 		
 
