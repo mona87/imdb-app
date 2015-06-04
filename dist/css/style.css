@@ -2,7 +2,8 @@ body{
 
 	background-color: #15435A;
 	font-family: 'Lato', sans-serif;
-	
+	background: url('https://dl.dropboxusercontent.com/u/53297391/movies-flipped.jpg') no-repeat;
+	background-size: cover;
 	/*-webkit-filter: blur(5px);*/
 	color: white;
 }
@@ -27,8 +28,7 @@ form{
 	padding-right: 50px;
 }
 .container-fluid{
-	background: url('https://dl.dropboxusercontent.com/u/53297391/movies-flipped.jpg') no-repeat;
-	background-size: cover;
+	
 
 }
 #home{
